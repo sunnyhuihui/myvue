@@ -21,6 +21,6 @@ let router =  new VueRouter({
 new Vue({
   el: '#app',
   router,
-  components: { Layout },
-  template: '<Layout/>'
+  template: '<Layout/>',
+  components: { Layout }
 })

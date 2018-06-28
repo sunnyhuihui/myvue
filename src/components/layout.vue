@@ -30,14 +30,7 @@
 </template>
 
 <script>
-    export default {
-        name: "layout.vue",
-        data(){
-          return{
-            mag: ''
-          }
-        }
-    }
+
 </script>
 
 <style>

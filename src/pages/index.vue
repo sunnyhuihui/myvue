@@ -14,14 +14,36 @@
           <div v-if="!product.last" class="hr"></div>
         </template>
       </div>
+      <div class="index-left-block lastest-news">
+        <h2>最新消息</h2>
+        <ul>
+          <li v-for="item in newsList">
+              <a :href="item.url">{{item.title}}</a>
+          </li>
+        </ul>
+      </div>
     </div>
+      <div class="index-right">
+          <div class="index-board-list">
+              <div class="index-board-item"
+                   v-for="(item, index) in boardList"
+                   :class="[{'line-last' : index % 2 !== 0},
+                   'index-board-'+item.id]">
+                  <div class="index-board-item-inner">
+                      <h2>{{item.title}}</h2>
+                      <p>{{ item.description }}</p>
+                      <a href="" class="button">立即购买</a>
+                  </div>
+              </div>
+          </div>
+      </div>
   </div>
 </template>
 
 <script>
 
   export default {
-    data () {
+    data() {
       return {
         invTime: 2000,
         slides: [
@@ -76,7 +98,25 @@
             saleout: false
           }
         ],
-        newsList: [],
+        newsList: [
+          {
+            title: '数据统计',
+            url: 'http://starcraft.com'
+          },
+          {
+            title: '数据预测',
+            url: 'http://warcraft.com'
+          },
+          {
+            title: '流量分析',
+            url: 'http://overwatch.com',
+            hot: true
+          },
+          {
+            title: '广告发布',
+            url: 'http://hearstone.com'
+          }
+        ],
         productList: {
           pc: {
             title: 'PC产品',
@@ -123,7 +163,9 @@
               }
             ]
           }
+        }
       }
+    }
   }
 </script>
 
